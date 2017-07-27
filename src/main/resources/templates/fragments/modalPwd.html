@@ -1,0 +1,47 @@
+<div class="modal fade modal-ext" id="modalPwd" role="dialog" th:fragment="modalPwd"
+		 aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1"
+		data-refresh="true" data-backdrop="static" data-keyboard="false">
+		
+		<div class="modal-dialog" role="document"
+			style="width: 40% !important;">
+			<!--Content-->
+			<div class="modal-content">
+				<!--Header-->
+				<div class="modal-header">
+	
+					<h4 class="modal-title" id="myModalLabel">Cambiar Contrase&ntilde;a</h4>
+				</div>
+				<!--Body-->
+				<div class="modal-body">
+					<div class="box-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Contrase&ntilde;a Anterior</label>
+								 <input type="text" id="pwd_idusuario" class="form-control" style="display: none;" th:value="${login.usuario.idusuario}" />
+								 <input type="password" placeholder="Ingrese su contraseña actual" id="pwd_pa" onchange="checkpass( this.value)" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label>Nueva Contrase&ntilde;a</label>
+								 <input type="password" placeholder="Ingrese la contraseña nueva" id="pwd_p1" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label>Repita Contrase&ntilde;a</label>
+								 <input type="password" placeholder="Vuelva a escribir la contraseña nueva" id="pwd_p2" class="form-control"/>
+							</div>
+	
+						</div>
+					</div>
+					</div>
+				</div>
+				<!--Footer-->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline btn-primary" id="pwd_aceptar" onclick="cambiarPwd()" disabled="disabled">Aceptar</button>
+					<button type="button" class="btn btn-outline btn-danger pull-left" onclick="cerrarPwd()"
+						data-dismiss="modal">Cancelar</button>
+	
+				</div>
+			</div>
+			<!--/.Content-->
+		</div>
+	</div>

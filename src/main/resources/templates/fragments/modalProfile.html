@@ -1,0 +1,82 @@
+
+<div class="modal fade modal-ext" id="modalProfile" role="dialog"
+	th:fragment="modalProfile" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1"
+	data-refresh="true" data-backdrop="static" data-keyboard="false">
+	
+	<div class="modal-dialog" role="document"
+		style="width: 60% !important;">
+		<!--Content-->
+		<div class="modal-content">
+			<!--Header-->
+			<div class="modal-header">
+
+				<h4 class="modal-title" id="m_titulo">Editar Perfil </h4>
+				
+			</div>
+			<!--Body-->
+			<div class="modal-body">
+				<div class="box-body">
+				<div class="row">
+					<div class="row">
+						<div class="col-md-3">
+							<label >Foto de Perfil</label>
+							<div id="file_upload-drop" class="uk-file-upload">
+								<div class="dropzone semaforo_rojo" id="dropzone">	
+									  <div class="fallback">
+									    <input name="file" type="file" id="file1" />
+									  </div>
+								</div>
+								 <input type="text" id="m_imagen"  class="form-control" style="display: none;"/>
+							</div>
+						</div>
+						<br/>
+						<div class="col-md-8">
+							
+							<div class="form-group">
+								<label >Rubro</label>
+								 <input type="text" id="m_rubro"  class="form-control" />
+							</div>
+							 <div class="form-group">
+								<label >Direccion</label>
+								 <input type="text" id="m_direccion"  class="form-control" />
+							</div>
+							 <div class="form-group">
+								<label >Correo Electronico</label>
+								 <input type="text" id="m_email"  class="form-control" />
+							</div>
+							 <div class="form-group">
+								<label >Telefono</label>
+								 <input type="text" id="m_telefono"  class="form-control" />
+							</div>
+							 <div class="form-group">
+								<label >Celular</label>
+								 <input type="text" id="m_celular"  class="form-control" />
+							</div>
+							<div class="form-group">
+								<label >Link de Facebook</label>
+								 <input type="text" id="m_facebook"  class="form-control" />
+								 <span class="help-block m-b-none">Debe iniciar con: http:// </span>
+							</div>
+							<div class="form-group">
+								<label >Sobre Nosotros</label>
+								 <textarea type="text" placeholder="" id="m_descripcion" 
+								 rows="4" class="form-control"  ></textarea>
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				</div>
+			</div>
+			<!--Footer-->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline btn-primary" id="mu_aceptar" onclick="guardar()">Aceptar</button>
+				<button type="button" class="btn btn-outline btn-danger pull-left" onclick="cerrar()"
+					data-dismiss="modal">Cancelar</button>
+
+			</div>
+		</div>
+		<!--/.Content-->
+	</div>
+</div>

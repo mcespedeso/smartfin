@@ -1,0 +1,83 @@
+<nav class="navbar-default navbar-static-side" role="navigation" th:fragment="aside">
+	<div class="sidebar-collapse">
+		<ul class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+				<div class="dropdown profile-element">
+					<!-- <th:block th:if="${login.imagen} == null">
+						<span> <img alt="image" class="img-circle" src="img/User-48-blank.png" /> </span> 
+					</th:block> -->
+						<!-- <th:block th:unless="${login.imagen} == null">					
+							<span> <img alt="image" class="img-circle img-responsive" 
+							th:src="'/semaforo/public/image/empresa/'+${login.imagen}" style="height: 70px; width: 70px;"/> </span> 
+						</th:block> -->
+					
+					<!-- <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+					 <span class="clear"> <span class="block m-t-xs"> <strong
+								class="font-bold" th:text="${login.usuario.usuario}"></strong>
+					</span>  
+						
+						<span class="text-muted text-xs " th:text="${login.perfilactual.descripcion}"></span>
+							&nbsp;&nbsp;<b class="caret"></b>
+					</span>
+					</a> -->
+					<ul class="dropdown-menu animated fadeInRight m-t-xs">
+						<!-- <li><a th:href="'profile?'+${login.usuario.empresa.codempresa}" th:text="#{aside.profile}"></a></li> -->
+						<!-- <th:block th:if="${login.perfilactual.idperfil} != 3">
+							<li><a href="javascript:;" onclick="modalPwd()">Cambiar Contrase&ntilde;a</a></li>
+						</th:block> -->
+						<!-- <li><a href="contacts.html">Contacts</a></li>
+						<li><a href="mailbox.html">Mailbox</a></li> -->
+						<li class="divider"></li>
+						<li><a href="login" th:text="#{aside.logout}"></a></li>
+					</ul>
+				</div>
+				<div class="logo-element">FP</div>
+			</li>
+			
+			<li>
+                    <a href="home"><i class="fa fa-home fa-lg"></i> <span class="nav-label">Inicio</span> </a>
+                    
+             </li>
+
+			<th:block th:each="listValue : ${menues}">
+			
+			<li>
+				<a href="#"><i class="fa fa-th-large"></i> <span
+					class="nav-label" th:text= "${listValue.descripcion}"></span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level collapse">
+					<th:block th:each= "submenulist : ${listValue.submenulist}">
+	
+						<th:block th:if="${submenulist.tipo} == 'P'">
+								<li> <a th:href="${submenulist.clase.url}"
+										 th:title="${submenulist.descripcion}" th:text="${submenulist.descripcion}"></a>
+								</li>
+										
+										
+						</th:block>
+					
+					</th:block>
+				
+				
+				</ul>
+			</li>
+			</th:block>
+			<!-- <th:block th:if="${login.perfilactual.idperfil} != 3">
+				<li>
+	                    <a href="contactos"><i class="fa fa-address-book-o fa-lg"></i> <span class="nav-label">Contactos</span> </a>
+	                    
+	             </li>
+			</th:block>
+			<th:block th:if="${login.perfilactual.idperfil} != 3">
+				<li>
+	                    <a href="chat"><i class="fa fa-comments-o fa-lg"></i> <span class="nav-label">Sala de Chat</span> </a>
+	                    
+	             </li>
+			</th:block> -->
+				
+		
+		</ul>
+
+	</div>
+	
+</nav>

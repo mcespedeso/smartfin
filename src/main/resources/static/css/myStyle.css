@@ -1,0 +1,36 @@
+.back_amarillo {
+	background-color: yellow;
+	border-color: yellow;
+	color: #000;
+	border-color: yellow;
+}
+
+.back_amarillo:hover {
+	background-color: #ffe000;
+	border-color: black;
+	color: #FFFFFF;
+}
+
+.back_rojo {
+	background-color: red;
+	border-color: red;
+	color: #FFFFFF;
+	border-color: red;
+}
+
+.back_rojo:hover {
+	background-color: #ed5565;
+	border-color: black;
+}
+
+.back_verde {
+	background-color: green;
+	border-color: green;
+	color: #FFFFFF;
+	border-color: green;
+}
+
+.back_verde:hover {
+	background-color: #1ab394;
+	border-color: black;
+}

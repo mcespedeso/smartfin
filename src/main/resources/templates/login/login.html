@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/semaforo/semaforo_favicon.png"/>
+
+    <title>Semáforo | Login</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body class="gray-bg" onload='setFocusToTextBox()'>
+	
+	<script>
+		
+	function setFocusToTextBox(){
+		 document.getElementById("login_username").focus();	
+	}
+	
+	</script>
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+           <!--  <div>
+                <h1 class="logo-name">ERP</h1>
+            </div> -->
+            
+             <div class="login-logo">
+        		<!-- <a href="http://ichef-1.bbci.co.uk/news/660/cpsprodpb/17A21/production/_85310869_85310700.jpg"> -->
+        		<img src="img/credisol/logo.png" height="200px" alt="Semaforo"/><!-- </a> -->
+    		</div><!-- /.login-logo -->
+            
+            <!-- <h2 th:text="#{login.bienvenida}"></h2> -->
+           <!--  <h2>Semáforo de Eliminación de Pobreza</h2> -->
+           <!--  <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                Continually expanded and constantly improved Inspinia Admin Them (IN+)
+            </p> -->
+            <br/>
+            <h3 th:text="#{login.iniciar}"></h3>
+             <div th:if="${param.error}" style="color: red;">
+            		Usuario o contraseña inválidos
+        		</div>
+        		<div th:if="${param.logout}" style="color: red;">
+            		Has sido desconectado/a
+        		</div>
+            <div th:if="${param.message != null}" class="alert alert-info" th:text="${param.message[0]}">message</div>
+            <form class="m-t" role="form" th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login_username" name="username" th:placeholder="#{login.usuario}" required="" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="login_password" name="password" th:placeholder="#{login.password}" required="" />
+                </div>
+                <button type="submit" value="INGRESAR" class="btn btn-primary block full-width m-b" th:text="#{login.ingresar}"></button>
+
+                <a href="semaforo/password"><small th:text="#{login.olvido}"></small></a>
+                <!-- <p class="text-muted text-center"><small>No tiene una cuenta?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="register.html">Crear una cuenta</a> -->
+            </form>
+            <p class="m-t"> <a>Fundación Paraguaya</a> <small>&copy; 2017</small> </p>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+	    delete localStorage.idioma;
+		delete localStorage.usuario;
+		delete localStorage.iddtsocioeconomica;
+		delete localStorage.nivel;
+		delete localStorage.respuestas;
+		delete localStorage.encuestado;
+		delete localStorage.banco;
+		localStorage.preguntas = "";
+    
+    </script>
+
+</body>
+
+</html>
